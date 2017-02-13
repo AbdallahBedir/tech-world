@@ -1,0 +1,33 @@
+<div class="RegisterPatient">
+    <div class="containerz">
+        <div class="wrapper">
+            <h5>Register Patient</h5>
+              <form [formGroup]="PatientForm" (ngSubmit)="Add(PatientForm.value)">
+                <div class="form-group">
+                    <input type="text" name="PatientName" placeholder="PatientName" [formControl]="PatientName">
+                </div>
+                <div [hidden]="PatientName.valid || PatientName.untouched">
+                    <div class="error" [hidden]="!PatientName.hasError('required')">PatientName is required.</div>
+                    </div>
+                <div class="form-group">
+                    <input type="text" name="Age" placeholder="Age" [formControl]="Age"> 
+                </div>
+                <div [hidden]="Age.valid || Age.untouched">
+                  <div class="error" [hidden]="!Age.hasError('required')">The Age is required.</div>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="Department" placeholder="Department" [formControl]="Department"> 
+                </div>
+                <div class="form-group">
+                    <input type="text" name="Disease" placeholder="Disease" [formControl]="Disease"> 
+                </div>
+                <div class="form-submit">
+                    <input type="submit" value="REGISTER" [disabled]="!PatientForm.valid">
+                </div>  
+                <div class="error" *ngIf="sucssed==false">
+                    Authentication Failed  
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

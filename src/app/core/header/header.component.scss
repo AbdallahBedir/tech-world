@@ -1,0 +1,15 @@
+:host{
+    text-align:center;
+    position:relative;
+    display: block;
+    height:22vh;
+    h3{
+        margin:0;
+        color:#fff;
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform:translate(-50%,-50%);
+
+    }
+}

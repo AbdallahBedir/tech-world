@@ -1,4 +1,22 @@
-<h1>
-  {{title}}
-</h1>
-<router-outlet></router-outlet>
+<div class="hospital">
+    <!-- start sidebar -->
+    <div class="col-sm-2 no-padding">
+        <div class="sidebar">
+            <app-sidebar></app-sidebar>
+        </div>
+    </div>
+    <!-- end sidebar -->
+    <div class="col-sm-10 no-padding">
+      <!-- start header -->
+      <div class="header">
+          <app-header></app-header>
+      </div>
+      <!-- end header -->
+      <!-- start main-content -->
+      <div class="main-content">
+          <router-outlet></router-outlet>
+      </div>
+      <!-- end main-content -->
+    </div>
+  </div>
+

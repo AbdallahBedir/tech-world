@@ -1,0 +1,21 @@
+.hospital{
+    position:relative;
+    .header{
+        width:100%;
+        background-color:#66ceff;
+        //height:22vh;
+    }
+    .sidebar{
+        margin:0;
+        box-shadow:1px 1px 5px rgba(0,0,0,0.1);
+        position: relative;
+        z-index: 1;
+        //min-height:100vh;
+        //position:fixed;
+    }
+    .main-content{
+        background-image: url('../assets/images/background.png');
+        padding:25px;
+        min-height:78vh;
+    }
+}

@@ -1,0 +1,33 @@
+<div class="wrapper">
+    <div class="wrap">
+      <div class="table-title">
+        <h3>Patients Table</h3>
+      </div>
+      <table class="table-fill">
+      <thead>
+          <tr>
+            <th class="text-left">Name</th>
+            <th class="text-left">Age</th>
+            <th class="text-left">Department</th>
+            <th class="text-left">Disease Des.</th>
+            <th class="text-left"></th>
+          </tr>
+      </thead>
+      <tbody class="table-hover">
+          <tr *ngFor="let p of patients">
+            <td class="text-left">{{p.name}}</td>
+            <td class="text-left">{{p.Age}}</td>
+            <td class="text-left">{{p.Department}}</td>
+            <td class="text-left">{{p.disease}}</td>
+            <td class="text-left">
+              <button (click)="deletePatient(p.id)" class="delete">Delete</button>
+              <button [routerLink]="['EditPatient',p.id]" class="Edit">Edit</button>
+            </td>
+          </tr>
+      </tbody>
+      </table>
+      <div class="RegisterPatient">
+          <button [routerLink]="['AddPatient']">Register Patient</button>
+      </div>
+    </div>
+</div>
