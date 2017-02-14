@@ -1,0 +1,44 @@
+.error-message{
+    color:#F03861;
+    font-size: 13px;
+}
+.login{
+    form{
+        background-color:#fff;
+        margin:30px auto;
+        padding:45px;
+        width:32%;
+        box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
+        md-input-container.login{
+            width:100%;
+            .md-input-placeholder:not(.mat-icon){
+                font-size:12px;
+                left:25px;
+            }
+            .md-input-placeholder.focused:not(.mat-icon){
+                left:0
+            }
+            .material-icons{
+                font-size:17px;
+            }
+            .mat-icon.md-input-placeholder.md-float.md-focused,
+            .mat-icon.md-input-placeholder.md-float:not(.md-empty){
+                visibility:hidden;
+            }
+        }
+        .submit{
+            margin:20px 0;
+            input{
+                display: block;
+                width: 100%;
+                padding: 8px 0;
+                font-size: 17px;
+                font-weight: 400;
+                border: none;
+                outline: none;
+                background-color: #F03861;
+                color: #fff;
+            }
+        }
+    }
+}

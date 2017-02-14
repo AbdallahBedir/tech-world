@@ -15,18 +15,24 @@
     .bottom{
         background-color:#fff;
         min-height: 78vh;
-        a{
-            display:block;
-            color:#585858;
-            padding:15px;
-            border-bottom:1px solid #f3f3f3;
-            transition:all 0.25s ease-in-out;
-            &:hover{
-                text-decoration: none;
-                background-color:#EEE;
-                color:#333;
+        ul{
+            li{
+                display:block;
+                border-bottom:1px solid #f3f3f3;
+                a{
+                    color:#585858;
+                    display:block;
+                    padding:15px;
+                    transition:all 0.25s ease-in-out;
+                    &:hover{
+                        text-decoration: none;
+                        background-color:#EEE;
+                        color:#333;
+                    }
+                    &:focus{text-decoration:none}
+                }
             }
-            &:focus{text-decoration:none}
         }
+  
     }
 }

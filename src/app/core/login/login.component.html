@@ -1,0 +1,44 @@
+<div class="login">
+  <form [formGroup]="loginGroup" (ngSubmit)="onSubmit(loginGroup.value)">
+    <div class="username">
+        <md-input-container class="login">
+          <label for="md-input-0" class="mat-icon md-input-placeholder md-float"
+               [class.md-empty]="username.value == '' || !username.value" 
+               [class.md-focused]="isUsernameFocused" >
+                <i class="material-icons md-light">account_box</i>
+          </label>
+           <input md-input placeholder="Username"  name="username" 
+                  (focus)="isUsernameFocused=true" (blur)="bluredUser($event)"
+                  [formControl]="username">
+        </md-input-container>
+        <div  *ngIf="!username.valid && username.touched" class="error-message">
+          <p *ngIf="username.hasError('required')">
+              Username is required
+          </p>
+        </div>
+    </div>
+    <div class="password">
+        <md-input-container class="login">
+          <label for="md-input-0" class="mat-icon md-input-placeholder md-float"
+                 [class.md-empty]="password.value == '' || !password.value " 
+               [class.md-focused]="isPasswordFocused">
+                <i class="material-icons">https</i>
+          </label>
+            <input md-input type="password" placeholder="Password"
+                  (focus)="isPasswordFocused=true" (blur)="bluredPass($event)"
+                 [formControl]="password" name="password">
+        </md-input-container>
+        <div  *ngIf="!password.valid && password.touched" class="error-message">
+          <p *ngIf="password.hasError('required')">
+              Password is required
+          </p>
+        </div>
+    </div>
+    <div class="submit">
+      <input type="submit" value="Login">
+    </div>
+    <div *ngIf="Failed" class="error-message">
+      <p>Wrong Credentials</p>
+    </div>
+  </form>
+</div>
