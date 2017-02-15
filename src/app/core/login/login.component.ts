@@ -2,6 +2,7 @@ import { Component, OnInit,ViewEncapsulation } from '@angular/core';
 import {FormGroup,FormControl,FormBuilder,Validators} from '@angular/forms';
 import {AuthService} from '../auth.service';
 import {Router} from '@angular/router';
+import { default as swal } from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -19,6 +20,7 @@ export class LoginComponent implements OnInit {
   
   constructor(builder:FormBuilder,private _authService:AuthService,
     private _router:Router) { 
+      
     this.username = new FormControl('',[Validators.required]);
     this.password = new FormControl('',[Validators.required]);
     this.loginGroup = builder.group({
@@ -26,10 +28,19 @@ export class LoginComponent implements OnInit {
       password:this.password
     });
     this.loginGroup.reset();
-    console.log("the user name value is",this.username.value);
+    
   }
   ngOnInit() {
-    
+    swal({
+          title: '',
+          type:'info',
+          html: `<p>Try those credentials to access "Patients" , "Doctors"
+                       lazy loaded modules</p>
+           <pre><b>Username</b>: admin<br> <b>Password</b>: admin</pre>`,
+          confirmButtonText: 'OK'
+      }).then(()=>{},()=>{
+
+      });
   }
   bluredUser(event){
     if(event.target.value == ''){
